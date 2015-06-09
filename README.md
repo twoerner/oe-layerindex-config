@@ -1,5 +1,5 @@
 oe-layerindex-config
-^^^^^^^^^^^^^^^^^^^^
+====================
 
 This is a proof-of-concept, work-in-progress attempt at a new configuration
 workflow for OE builds.

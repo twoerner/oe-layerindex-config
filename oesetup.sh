@@ -71,7 +71,7 @@ else
 		DL_DIR ?= "${DL_DIR}"
 	EOF
 
-	cp $RUNFROMDIR/local.conf conf
+	cp $RUNFROMDIR/local.conf $BUILDDIR/conf
 fi
 
 # Make sure Bitbake doesn't filter out the following variables from our environment.

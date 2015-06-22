@@ -2,14 +2,14 @@
 
 OEROOT=$(pwd)
 RUNFROMDIR="$(dirname $(realpath $BASH_SOURCE))"
-BINNAME=$(basename $0)
 
 # make sure we're sourced and not run in a subshell
 if [ "$0" = "$BASH_SOURCE" ]; then
+	BINNAME=$(basename $0)
 	echo "this script needs to modify your shell's environment"
 	echo "as such, it needs to be sourced, rather than run in a subshell"
 	echo "please run as:"
-	echo "    $ . $0 [<options>]"
+	echo "    $ . $BINNAME [<options>]"
 	echo "and not as:"
 	echo "    $ ./$BINNAME [<options>]"
 	exit 1
@@ -18,7 +18,7 @@ fi
 # NOTE: a trap..EXIT won't work here because we're sourced
 cleanup() {
 	unset RUNFROMDIR
-	unset OEROOT BINNAME BUILDDIR
+	unset OEROOT BUILDDIR
 	unset DL_DIR
 }
 

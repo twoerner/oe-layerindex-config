@@ -28,6 +28,11 @@ if [ -d "$BUILDDIR" -a -r "$BUILDDIR/conf/local.conf" ]; then
 	echo "It looks like a build has already been configured in $BUILDDIR"
 	echo "Updating environment..."
 else
+	# remove any existing partial configuration
+	# from a potentially failed previous configure
+	rm -f $BUILDDIR/conf/auto.conf
+	rm -f $BUILDDIR/conf/local.conf
+	rm -f $BUILDDIR/conf/bblayers.conf
 
 	# find programs
 	if [ ! -x $RUNFROMDIR/pysetup-int.py ]; then

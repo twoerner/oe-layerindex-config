@@ -28,17 +28,9 @@ locale.setlocale(locale.LC_ALL, '')
 OEROOT = os.getcwd()
 
 # process cmdline args
-try:
-	cmdlineopts, cmdlineargs = getopt.getopt(sys.argv[1:], "r", ["refresh"])
-except Exception, e:
-	print "Cmdline parsing error"
-	sys.exit(1)
-for opt, arg in cmdlineopts:
-	if opt in ("-r", "--refresh"):
-		os.system("rm -fr " + OEROOT + "/index/*json")
 buildDir = OEROOT + "/build"
-if len(cmdlineargs) > 0:
-	buildDir = OEROOT + "/" + cmdlineargs[0]
+if len(sys.argv[1:]) > 0:
+	buildDir = OEROOT + "/" + sys.argv[1]
 
 # get, check, update index data
 try:
@@ -46,17 +38,17 @@ try:
 except Exception, e:
 	pass
 filename = OEROOT + "/index/machines.json"
-if not os.path.isfile(filename):
-	os.system("wget http://layers.openembedded.org/layerindex/api/machines/ -O " + filename)
+os.system("rm -f " + filename)
+os.system("wget http://layers.openembedded.org/layerindex/api/machines/ -O " + filename)
 filename = OEROOT + "/index/branches.json"
-if not os.path.isfile(filename):
-	os.system("wget http://layers.openembedded.org/layerindex/api/branches/ -O " + filename)
+os.system("rm -f " + filename)
+os.system("wget http://layers.openembedded.org/layerindex/api/branches/ -O " + filename)
 filename = OEROOT + "/index/layerBranches.json"
-if not os.path.isfile(filename):
-	os.system("wget http://layers.openembedded.org/layerindex/api/layerBranches/ -O " + filename)
+os.system("rm -f " + filename)
+os.system("wget http://layers.openembedded.org/layerindex/api/layerBranches/ -O " + filename)
 filename = OEROOT + "/index/layerItems.json"
-if not os.path.isfile(filename):
-	os.system("wget http://layers.openembedded.org/layerindex/api/layerItems/ -O " + filename)
+os.system("rm -f " + filename)
+os.system("wget http://layers.openembedded.org/layerindex/api/layerItems/ -O " + filename)
 machines = json.load(open(OEROOT + '/index/machines.json'))
 branches = json.load(open(OEROOT + '/index/branches.json'))
 layerBranches = json.load(open(OEROOT + '/index/layerBranches.json'))

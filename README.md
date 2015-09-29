@@ -21,10 +21,10 @@ How to Use It
 
 e.g.
 
-$ mkdir ~/devel/extern; cd ~/devel/extern
-$ git clone git://github.com/twoerner/oe-layerindex-config.git
-$ mkdir ~/oebuild; cd ~/oebuild
-$ . ~/devel/extern/oe-layerindex-config/oesetup.sh
+	$ mkdir ~/devel/extern; cd ~/devel/extern
+	$ git clone git://github.com/twoerner/oe-layerindex-config.git
+	$ mkdir ~/oebuild; cd ~/oebuild
+	$ . ~/devel/extern/oe-layerindex-config/oesetup.sh
 
 The scripts guide you through selecting your branch, machine, distro, download
 directory. When you are done it leaves you in the build directory from which

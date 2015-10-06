@@ -18,7 +18,7 @@ fi
 # NOTE: a trap..EXIT won't work here because we're sourced
 cleanup() {
 	unset RUNFROMDIR
-	unset OEROOT BUILDDIR
+	unset OEROOT
 	unset DL_DIR
 }
 

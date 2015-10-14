@@ -27,7 +27,7 @@ http://www.yoctoproject.org/docs/latest/yocto-project-qs/yocto-project-qs.html#y
 In addition to the required packages cited in the above document, in order to
 use this tool you'll also need to install:
 
-	- python-dialog
+  	- python-dialog
 
 
 

@@ -13,6 +13,24 @@ The user will still use bitbake to perform the build and is free to tweak the
 configuration. This utility is meant to be a configuration helper, in essence,
 a replacement for the "source openembedded-core/oe-init-build-env" step.
 
+
+
+Prerequisites
+-------------
+
+Since the point of this tool is to help you prepare some part of your computer
+to perform OE builds, you will need to follow the "Yocto Project Quick Start"
+guide to prepare your computer, in general, for performing an OE build:
+
+http://www.yoctoproject.org/docs/latest/yocto-project-qs/yocto-project-qs.html#yp-resources
+
+In addition to the required packages cited in the above document, in order to
+use this tool you'll also need to install:
+
+	- python-dialog
+
+
+
 How to Use It
 -------------
 
